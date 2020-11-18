@@ -8,7 +8,7 @@ using UnityEngine.Video;
 public class NearMe : MonoBehaviour
 {
 
-   GameObject pdfCanvas;
+   public GameObject pdfCanvas;
     //[Header("Drag and drop Stand Video ")]
     //public MediaPlayer audioSource;
     bool amIN = false;
@@ -33,9 +33,9 @@ public class NearMe : MonoBehaviour
         if (other.tag == "Player"&&amIN==false)
         {
             amIN = true;
-            if (pdfCanvas.activeSelf == false)
+            if (MobileOrientation.currentMainMenu.activeSelf == false)
             {
-                pdfCanvas.SetActive(true);
+                MobileOrientation.currentMainMenu.SetActive(true);
             }
             //if (audioSource.enabled == false)
             //{
@@ -57,16 +57,16 @@ public class NearMe : MonoBehaviour
         OnlineVideoManager.URL = null;
         OnlineVideoManager.CardURL = null;
         OnlineVideoManager.DocumentURL = null;
-        pdfCanvas.SetActive(false);
+        MobileOrientation.currentMainMenu.SetActive(false);
 
     }
     public void SetZone(GameObject zone)
     {
         NearMe neer = zone.gameObject.GetComponent<NearMe>();
       
-            if (pdfCanvas.activeSelf == false)
+            if (MobileOrientation.currentMainMenu.activeSelf == false)
             {
-                pdfCanvas.SetActive(true);
+            MobileOrientation.currentMainMenu.SetActive(true);
             }
         OnlineVideoManager.URL = neer.StandVideoURL;
         OnlineVideoManager.DocumentURL = neer.StandDocumentURL;
@@ -78,6 +78,6 @@ public class NearMe : MonoBehaviour
         OnlineVideoManager.URL = null;
         OnlineVideoManager.CardURL = null;
         OnlineVideoManager.DocumentURL = null;
-        pdfCanvas.SetActive(false);
+        MobileOrientation.currentMainMenu.SetActive(false);
     }
 }

@@ -144,6 +144,7 @@ public class PlayerMovemnetSystem : MonoBehaviour
 
 
     public Transform FootSteps;
+    public CursorMode curserModes;
     public void playerMove()
     {
         if (!EventSystem.current.IsPointerOverGameObject())
@@ -165,14 +166,14 @@ public class PlayerMovemnetSystem : MonoBehaviour
                
                     if (Physics.Raycast(myRay, out hit,10, theGround) && Input.GetMouseButton(0) == false)
                     {
-                        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                        Cursor.SetCursor(null, Vector2.zero,CursorMode.Auto);
                         FootSteps.gameObject.SetActive(true);
                         FootSteps.position = new Vector3(hit.point.x, FootSteps.position.y, hit.point.z);
                     }
 
                     else
                     {
-                        Cursor.SetCursor(MobileOrientation.mycursorHeadTexture, Vector2.zero, CursorMode.Auto);
+                        Cursor.SetCursor(MobileOrientation.mycursorHeadTexture, Vector2.zero,curserModes);
                         FootSteps.gameObject.SetActive(false);
 
                     }

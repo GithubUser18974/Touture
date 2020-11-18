@@ -12,7 +12,6 @@ public class MobileOrientation : MonoBehaviour
 
     public Texture2D cursorHeadTexture;
     public Texture2D cursorFootTexture;
-    public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
     public static Texture2D mycursorHeadTexture;
     public static Texture2D mycursorFootTexture;
@@ -27,9 +26,14 @@ public class MobileOrientation : MonoBehaviour
         {
             currentMainMenu = PC_MainMenu;
         }
-        if (DeviceType.Handheld == SystemInfo.deviceType)
+        else if (DeviceType.Handheld == SystemInfo.deviceType)
         {
             currentMainMenu = mobile_MainMenu;
+        }
+        else
+        {
+            currentMainMenu = mobile_MainMenu;
+
         }
         mycursorFootTexture = cursorFootTexture;
         mycursorHeadTexture = cursorHeadTexture;
