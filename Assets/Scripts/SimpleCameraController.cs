@@ -136,7 +136,7 @@ namespace UnityTemplateProjects
             }
 
             // Rotation
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(MobileOrientation.rotateControler))
             {
                 
                 var mouseMovement = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y") * (invertY ? 1 : -1));

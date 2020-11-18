@@ -12,10 +12,12 @@ public class MobileOrientation : MonoBehaviour
 
     public Texture2D cursorHeadTexture;
     public Texture2D cursorFootTexture;
-    public Vector2 hotSpot = Vector2.zero;
     public static Texture2D mycursorHeadTexture;
     public static Texture2D mycursorFootTexture;
 
+    [Header("Enter 0 or 1 for this.. mouse-left=0, mouse-right=1 ")]
+    public int mouserotateionControler = 1;
+    public static int rotateControler;
 
     public Image CardStand;
     public static  Image myCardStand;
@@ -38,6 +40,10 @@ public class MobileOrientation : MonoBehaviour
         mycursorFootTexture = cursorFootTexture;
         mycursorHeadTexture = cursorHeadTexture;
         myCardStand = CardStand;
+        if (mouserotateionControler >= 1)
+            rotateControler = 1;
+        else
+            rotateControler = 0;
     }
     public ScreenOrientation screenOrientation;
     private void Awake()

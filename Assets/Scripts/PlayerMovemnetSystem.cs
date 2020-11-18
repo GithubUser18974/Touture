@@ -151,7 +151,7 @@ public class PlayerMovemnetSystem : MonoBehaviour
         {
             Ray myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Input.GetMouseButtonDown(0) && canMOve)
+            if (Input.GetMouseButtonDown(0) && canMOve )
             {
                             
                 if (Physics.Raycast(myRay, out hit, 7, theGround))
@@ -164,7 +164,7 @@ public class PlayerMovemnetSystem : MonoBehaviour
                 if (!isPointToUI) { 
                 
                
-                    if (Physics.Raycast(myRay, out hit,10, theGround) && Input.GetMouseButton(0) == false)
+                    if (Physics.Raycast(myRay, out hit,10, theGround) && Input.GetMouseButton(MobileOrientation.rotateControler) == false)
                     {
                         Cursor.SetCursor(null, Vector2.zero,CursorMode.Auto);
                         FootSteps.gameObject.SetActive(true);
@@ -217,6 +217,17 @@ public class PlayerMovemnetSystem : MonoBehaviour
 
         }
     }
+    //public bool IsDoubleClicks = false;
+    //public virtual void OnPointerClick(PointerEventData eventData)
+    //{
+    //    if (eventData.clickCount == 2)
+    //    {
+    //        IsDoubleClicks = true;
+    //    }
+    //    else {
+    //        IsDoubleClicks = false;
+    //    }
+    //}
     public static bool IsDoubleTap()
     {
         bool result = false;
